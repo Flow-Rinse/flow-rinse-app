@@ -48,6 +48,7 @@ import SignupPage from "views/examples/SignupPage.js";
 import Registration from 'views/Registration.js';
 import LoginPage from "views/LoginPage.js";
 import Listings from "views/Listings.js";
+import Booking from "views/Booking.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -80,6 +81,8 @@ ReactDOM.render(
       <Route path="/login" render={props => <LoginPage {...props} />} />
       <Route path="/registration" render={props => <Registration {...props} />} />
       <Route path="/listings" render={props => <Listings {...props} />} />
+      <Redirect to="/login" />
+      <Route path="/booking" render={props => <Booking {...props} />} />
       <Redirect to="/login" />
     </Switch>
   </BrowserRouter>,
