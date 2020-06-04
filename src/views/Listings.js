@@ -168,6 +168,7 @@ function Listings(props) {
   const [geolocation, setGeolocation] = React.useState(null);
   const [business, setBusiness] = React.useState(null);
   const [searchKey, setSearchKey] = React.useState(null);
+  const [showRange, setShowRange] = React.useState(false);
 
   React.useEffect(()=> {
     /** Get User Location */
@@ -264,8 +265,11 @@ function Listings(props) {
       <WhiteNavbar />
       <div className="wrapper">
         <SearchBar updateSearchKey={updateSearchKey}/>
-        <FillterButton />
-        <RangeSlider />
+        <FillterButton setShowRange={()=> setShowRange(!showRange)}/>
+        {
+          showRange &&
+          <RangeSlider />
+        }
         <div className="section-card-listings">
           <Container>
             <Row>
