@@ -21,9 +21,9 @@ function RangeSlider() {
         .classList.contains("noUi-target")
     ) {
       Slider.create(document.getElementById("sliderRegular"), {
-        start: [50],
+        start: [25],
         connect: [true, false],
-        step: 0.5,
+        step: 5,
         range: { min: 0, max: 100 }
       });
     }

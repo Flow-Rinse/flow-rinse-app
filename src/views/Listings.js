@@ -232,8 +232,7 @@ function Listings(props) {
 
   function renderCards(){
     return(
-      staticBusiness && staticBusiness.map((value, index) => {
-        console.log('value', value)
+      business && business.map((value, index) => {
         return(
           <Cards key={index} value={value} routeChange={routeChange}/>
         )

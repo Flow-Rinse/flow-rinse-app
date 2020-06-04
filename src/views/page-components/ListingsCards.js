@@ -35,7 +35,9 @@ function ListingsCards(props) {
             <p className="card-description">
             {props.value.description}
             </p>
-            <Button className="btn-round w-100" type="button" onClick={()=> props.routeChange('/booking')}>
+            <Button className="btn-round w-100" type="button" onClick={(e)=>{ 
+              e.preventDefault()
+              props.routeChange('/booking')}}>
               BOOK NOW
             </Button>
           </CardBody>
