@@ -10,9 +10,11 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+        margin-top: 20px;
         .share-nav{
             a{
                 &:first-child{
+                    margin-right: 20px;
                     @media only screen and (max-width: 767px) {
                         margin-right: 20px;
                     }
@@ -32,20 +34,22 @@
             margin-bottom: 40px;
         }
         .store-image{
+            width: 230px;
+            margin-bottom: 10px;
             @media only screen and (max-width: 767px) {
                 width: 96px;
                 margin-bottom: 10px;
             }
         }
         h3{
-            font-size: em(34);
+            font-size: em(65);
             color: #FFFFFF;
             letter-spacing: -1.28px;
             text-align: center;
             line-height: 1;
+            margin-bottom: 10px;
             @media only screen and (max-width: 767px) {
                 font-size: 34px;
-                margin: 0;
             }
         }
         span{
@@ -53,11 +57,13 @@
             color: #FFFFFF;
             letter-spacing: -0.6px;
             text-align: center;
+            margin-bottom: 10px;
             @media only screen and (max-width: 767px) {
                 font-size: 16px;
             }
         }
         .store-rating{
+            margin-bottom: 10px;
             @media only screen and (max-width: 767px) {
                 margin-top: 10px;
             }

@@ -18,7 +18,7 @@ function FillterButton(props) {
       <div className="section-filter-buttons">
         <Container>
           <Row>
-            <Col className="filter-buttons-container">
+            <Col xl="5" className="filter-buttons-container">
               <Button className="btn-round mr-2" color="info" block outline type="button" style={{display: 'flex', justifyContent: 'space-around'}}>
                 <span style={{alignSelf: 'center'}}>CATEGORIES</span>
                 <img className="ml-3" src={CategoryIcon}/>
