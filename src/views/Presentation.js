@@ -21,7 +21,23 @@ import Image from "./presentation-sections/Image.js";
 import Testimonials from "./presentation-sections/Testimonials.js";
 import Pricing from "./presentation-sections/Pricing.js";
 
+import { getGeolocation } from '../service/geolocation';
+import { requestGooglePlace } from '../service/google';
+
 function Presentation() {
+
+  React.useEffect(()=> {
+    /** Get User Location */
+    getUserLocation();
+  })
+
+  function getUserLocation(){
+    getGeolocation().then((value)=> {
+      console.log('value', value)
+      // requestGooglePlace(value, value)
+    })
+  }
+
   React.useEffect(() => {
     document.body.classList.add("presentation-page");
     document.body.classList.add("sidebar-collapse");
