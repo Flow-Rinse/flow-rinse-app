@@ -1,0 +1,47 @@
+.section-card-listings{
+    @media only screen and (max-width: 767px) {
+        padding: 0 18px;
+    }
+    .card-listings-container{
+        @media only screen and (max-width: 767px) {
+            padding: 7px;
+        }
+        .card{
+            border-radius: em(20) ;
+            margin-bottom: em(50);
+            @media only screen and (max-width: 767px) {
+                margin-bottom: 11px;
+            }
+            .rounded{
+                border-radius: em(20)!important;
+            }
+            .card-body{
+                .card-description{
+                    @media only screen and (max-width: 767px) {
+                        font-size: 12px;
+                        color: #757575;
+                        letter-spacing: 0;
+                        line-height: 17px;
+                    }
+                }
+                .card-title{
+                    @media only screen and (max-width: 767px) {
+                        font-size: 16px;
+                        color: #757575;
+                        letter-spacing: 0;
+                    }
+                }
+            }
+        }
+        .card:not(.card-plain) .rounded{
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+        button{
+            background-color: #FF8811;
+            @media only screen and (max-width: 767px) {
+                padding: 9px 20px;
+            }
+        }
+    }
+}

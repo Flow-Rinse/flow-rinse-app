@@ -24,6 +24,10 @@ import "assets/scss/now-ui-kit.scss";
 import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
+
+// custom styles
+import "assets/custom-scss/custom.scss";
+
 // pages
 import AboutUs from "views/examples/AboutUs.js";
 import BlogPost from "views/examples/BlogPost.js";
@@ -34,7 +38,7 @@ import Index from "views/Index.js";
 import LandingPage from "views/examples/LandingPage.js";
 import LoginPage from "views/examples/LoginPage.js";
 import NucleoIcons from "views/NucleoIcons.js";
-import Presentation from "views/Presentation.js";
+import Listings from "views/Listings.js";
 import Pricing from "views/examples/Pricing.js";
 import ProductPage from "views/examples/ProductPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
@@ -61,8 +65,8 @@ ReactDOM.render(
         render={props => <NucleoIcons {...props} />}
       />
       <Route
-        path="/presentation"
-        render={props => <Presentation {...props} />}
+        path="/listings"
+        render={props => <Listings {...props} />}
       />
       <Route path="/pricing" render={props => <Pricing {...props} />} />
       <Route
@@ -75,7 +79,7 @@ ReactDOM.render(
       />
       <Route path="/sections" render={props => <Sections {...props} />} />
       <Route path="/sign-up" render={props => <SignupPage {...props} />} />
-      <Redirect to="/presentation" />
+      <Redirect to="/listings" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
