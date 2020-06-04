@@ -167,13 +167,14 @@ function Listings(props) {
 
   const [geolocation, setGeolocation] = React.useState(null);
   const [business, setBusiness] = React.useState(null);
+  const [searchKey, setSearchKey] = React.useState(null);
 
   React.useEffect(()=> {
     /** Get User Location */
     getUserLocation();
   },[])
 
-  function getUserLocation(){
+  function getUserLocation() {
     getGeolocation().then((value)=> {
       console.log('user location -> ', value)
       setGeolocation(value);
@@ -192,6 +193,24 @@ function Listings(props) {
     if(response && response.data && response.data.data && response.data.data.businesses){
       setBusiness(response.data.data.businesses);
     }
+  }
+
+  async function getBusinessByKey(value){
+    const response = await getData('/api/business?latitude='+geolocation.lat+'&longitude='+geolocation.lon+'&distance=100000&search='+value).then(function(res){
+      return res;
+    }).catch(function(e){
+      return e; 
+    })
+    console.log(response);
+
+    if(response && response.data && response.data.data && response.data.data.businesses){
+      setBusiness(response.data.data.businesses);
+    }
+  }
+
+  function updateSearchKey(value){
+    setSearchKey(value);
+    getBusinessByKey(value);
   }
 
   function routeChange(path) {  
@@ -244,10 +263,9 @@ function Listings(props) {
     <>
       <WhiteNavbar />
       <div className="wrapper">
-        <SearchBar />
+        <SearchBar updateSearchKey={updateSearchKey}/>
         <FillterButton />
         <RangeSlider />
-        
         <div className="section-card-listings">
           <Container>
             <Row>

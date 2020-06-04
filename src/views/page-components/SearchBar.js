@@ -13,7 +13,7 @@ import {
 
 // core components
 
-function SearchBar() {
+function SearchBar(props) {
   return (
     <>
       <div className="section-search-bar">
@@ -24,6 +24,7 @@ function SearchBar() {
                   <Input
                     placeholder="What do you need today?"
                     type="text"
+                    onChange={(e)=> props.updateSearchKey(e.target.value)}
                   ></Input>
                   <InputGroupAddon addonType="append">
                     <InputGroupText>

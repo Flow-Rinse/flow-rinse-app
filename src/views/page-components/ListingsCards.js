@@ -11,6 +11,8 @@ import {
   Col
 } from "reactstrap";
 
+import moment from 'moment';
+
 // core components
 
 function ListingsCards(props) {
@@ -31,9 +33,15 @@ function ListingsCards(props) {
               <a href="#pablo" onClick={e => e.preventDefault()}>
                {props.value.name}
               </a>
+              <p className="card-description">
+                {props.value.city}
+              </p>
             </CardTitle>
             <p className="card-description">
-            {props.value.description}
+              {props.value.description}
+            </p>
+            <p className="card-description">
+              {'Open now • Closes '+ moment(new Date).format("h a")}
             </p>
             <Button className="btn-round w-100" type="button" onClick={(e)=>{ 
               e.preventDefault()
