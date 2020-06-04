@@ -12,7 +12,9 @@ import {
 
 // core components
 
-function BookingForm() {
+function BookingForm(props) {
+
+
   return (
     <>
       <div className="section-booking-form">

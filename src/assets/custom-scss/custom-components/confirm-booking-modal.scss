@@ -1,0 +1,54 @@
+.confirm-booking-modal{
+    top: 50%;
+    transform: translateY(-50%)!important;
+    @media only screen and (max-width: 767px) {
+        margin: 0 25px;
+    }
+    .modal-content{
+        border-radius: 15px;
+    }
+    .modal-header{
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        background-color: #FF8811;
+        color: #fff;
+        padding-top: em(23);
+        padding-bottom: em(23);
+        h4{
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .modal-body{
+        @media only screen and (max-width: 767px) {
+            padding-top: 21px;
+            padding-bottom: 39px;
+            padding-left: 41px;
+        }
+        p{
+            font-size: em(16);
+            color: #757575;
+            letter-spacing: -0.6px;
+            margin-bottom: 0;
+            @media only screen and (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+    }
+    .modal-footer{
+        @media only screen and (max-width: 767px) {
+            padding-bottom: 28px;
+        }
+    }
+    button{
+        background-color: #FF8811;
+        color: #fff;
+        font-size: em(12);
+        letter-spacing: 1px;
+        text-align: center;
+        line-height: 16px;
+        @media only screen and (max-width: 767px) {
+            font-size: 16px;
+        }
+    }
+}

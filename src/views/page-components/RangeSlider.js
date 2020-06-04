@@ -2,7 +2,7 @@ import React from "react";
 
 // plugin that creates slider
 // import Slider from "nouislider";
-import{ RangeSlider as RangeSliderss} from 'reactrangeslider';
+// import{ RangeSlider as RangeSliderss} from 'reactrangeslider';
 
 // reactstrap components
 import {
@@ -26,20 +26,26 @@ function RangeSlider() {
     setVolume(value)
   }
 
+  const handleChange = (event) => {
+    console.log(event.target.value)
+  }
+
   return (
     <>
       <div className="section-range-slider">
         <Container>
         <p className="category">{"Within "+volumeRange+" km. of Cavite"}</p>
-        <RangeSliderss
+        {/* <RangeSliderss
           value={ volumeRange }
           onChange={ (value)=> sliderOnChange(value) }
           max={100}
           min={10}
           step={ 10 }
-        />
+        /> */}
+         <input className="w-100" type="range" min="0" max="100" onChange={handleChange}/>
         </Container>
       </div>
+     
     </>
   );
 }

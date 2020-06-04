@@ -18,9 +18,11 @@ import WhiteNavbar from "components/Navbars/WhiteNavbar.js";
 
 // sections for this page
 import BookingForm from "./page-components/BookingForm.js";
+import ModalConfirm from "./page-components/ModalConfirm.js";
 
 
 function Listings() {
+
   React.useEffect(() => {
     document.body.classList.add("booking-page");
     window.scrollTo(0, 0);
@@ -61,6 +63,7 @@ function Listings() {
           </Row>
         </Container>
         <BookingForm />
+        <ModalConfirm />
       </div>
     </>
   );

@@ -1,3 +1,10 @@
 nav{
-    background-color: orange;
+    .navbar-toggler-bar {
+        @media screen and (max-width: 991px){
+            height: 2px!important;
+            background-color: #FF8811!important;
+            width: 33px!important;
+        }
+    }
+
 }

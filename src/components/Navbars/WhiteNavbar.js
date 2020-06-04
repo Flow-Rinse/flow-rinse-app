@@ -33,12 +33,7 @@ function WhiteNavbar() {
       <Navbar className="bg-white fixed-top" expand="lg">
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand to="/" tag={Link} id="navbar-brand">
-              Now Ui Kit PRO React
-            </NavbarBrand>
-            <UncontrolledTooltip target="navbar-brand">
-              Designed by Invision. Coded by Creative Tim
-            </UncontrolledTooltip>
+        
             <button
               onClick={() => {
                 document.documentElement.classList.toggle("nav-open");

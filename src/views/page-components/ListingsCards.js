@@ -25,24 +25,26 @@ function ListingsCards(props) {
             <img
               alt="..."
               className="img rounded"
-              src={props.value.photo_url}
+              src={require("assets/img/project13.jpg")}
             ></img>
           </div>
           <CardBody>
-            <CardTitle tag="h5">
-              <a href="#pablo" onClick={e => e.preventDefault()}>
-               {props.value.name}
-              </a>
+            <div>
+              <CardTitle tag="h5">
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                {props.value.name}
+                </a>
+                <p className="card-description">
+                  {props.value.city}
+                </p>
+              </CardTitle>
               <p className="card-description">
-                {props.value.city}
+                {props.value.description}
               </p>
-            </CardTitle>
-            <p className="card-description">
-              {props.value.description}
-            </p>
-            <p className="card-description">
-              {'Open now • Closes '+ moment(new Date).format("h a")}
-            </p>
+              <p className="card-description">
+                {'Open now • Closes '+ moment(new Date).format("h a")}
+              </p>
+            </div>
             <Button className="btn-round w-100" type="button" onClick={(e)=>{ 
               e.preventDefault()
               props.routeChange('/booking')}}>

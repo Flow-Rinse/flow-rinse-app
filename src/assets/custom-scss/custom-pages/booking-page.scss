@@ -3,6 +3,13 @@
     height: 100vh;
     nav{
         background-color: #FF8811!important;
+        .navbar-toggler-bar {
+            @media screen and (max-width: 991px){
+                height: 2px!important;
+                background-color: #fff!important;
+                width: 33px!important;
+            }
+        }
     }
     .wrapper{
         margin-top: em(115);
