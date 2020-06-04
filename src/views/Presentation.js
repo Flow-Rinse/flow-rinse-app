@@ -26,17 +26,17 @@ import { requestGooglePlace } from '../service/google';
 
 function Presentation() {
 
-  React.useEffect(()=> {
-    /** Get User Location */
-    getUserLocation();
-  })
+  // React.useEffect(()=> {
+  //   /** Get User Location */
+  //   getUserLocation();
+  // })
 
-  function getUserLocation(){
-    getGeolocation().then((value)=> {
-      console.log('value', value)
-      // requestGooglePlace(value, value)
-    })
-  }
+  // function getUserLocation(){
+  //   getGeolocation().then((value)=> {
+  //     console.log('value', value)
+  //     // requestGooglePlace(value, value)
+  //   })
+  // }
 
   React.useEffect(() => {
     document.body.classList.add("presentation-page");

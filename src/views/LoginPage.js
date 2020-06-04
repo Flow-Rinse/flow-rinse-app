@@ -1,4 +1,5 @@
 import React from "react";
+import { getData, postData } from '../utils/api';
 
 // reactstrap components
 import {
@@ -21,9 +22,13 @@ import {
 import DropdownScrollNavbar from "components/Navbars/DropdownScrollNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
-function LoginPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
+function LoginPage(props) {
+  const [emailAddress, setEmailAddress] = React.useState(false);
+  const [password, setPassword] = React.useState(false);
+
+  const [emailAddressValue, setEmailAddressValue] = React.useState('jaycee.mandap@dottystylecreative.com');
+  const [passwordValue, setPasswordValue] = React.useState('password');
+
   React.useEffect(() => {
     document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
@@ -33,9 +38,32 @@ function LoginPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
+
+  function routeChange(path) {  
+    console.log(props)
+    props.history.push(path);
+  };
+
+  async function requestLogin(){
+    let requestObj = {
+      'email': emailAddressValue,
+      'password': passwordValue,
+    }
+    console.log(requestObj)
+    const response = await postData('/api/login', requestObj).then(function(res){
+      return res;
+    }).catch(function(e){
+      return e; 
+    })
+    if(response && response.data && response.data.access_token){
+      localStorage.setItem('token', response.data.access_token)
+      routeChange('/listings');
+    }
+  }
+
   return (
     <>
-      <DropdownScrollNavbar />
+      {/* <DropdownScrollNavbar /> */}
       <div className="page-header header-filter" filter-color="blue">
         <div
           className="page-header-image"
@@ -43,7 +71,7 @@ function LoginPage() {
             backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
           }}
         ></div>
-        <div className="content">
+        {/* <div className="content"> */}
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="5">
@@ -61,37 +89,37 @@ function LoginPage() {
                       <InputGroup
                         className={
                           "no-border input-lg" +
-                          (firstFocus ? " input-group-focus" : "")
-                        }
-                      >
+                          (emailAddress ? " input-group-focus" : "")
+                        }>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="now-ui-icons users_circle-08"></i>
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
-                          placeholder="First Name..."
+                          placeholder="Email Address"
                           type="text"
-                          onFocus={() => setFirstFocus(true)}
-                          onBlur={() => setFirstFocus(false)}
+                          onFocus={() => setEmailAddress(true)}
+                          onBlur={() => setEmailAddress(false)}
+                          onChange={(e)=> setEmailAddressValue(e.target.value)}
                         ></Input>
                       </InputGroup>
                       <InputGroup
                         className={
                           "no-border input-lg" +
-                          (lastFocus ? " input-group-focus" : "")
-                        }
-                      >
+                          (password ? " input-group-focus" : "")
+                        }>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="now-ui-icons text_caps-small"></i>
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
-                          placeholder="Last Name..."
-                          type="text"
-                          onFocus={() => setLastFocus(true)}
-                          onBlur={() => setLastFocus(false)}
+                          placeholder="Password"
+                          type="password"
+                          onFocus={() => setPassword(true)}
+                          onBlur={() => setPassword(false)}
+                          onChange={(e)=> setPasswordValue(e.target.value)}
                         ></Input>
                       </InputGroup>
                     </CardBody>
@@ -100,25 +128,41 @@ function LoginPage() {
                         block
                         className="btn-round"
                         color="info"
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
+                        onClick={e => {
+                          e.preventDefault();
+                          requestLogin();
+                        }}
                         size="lg"
                       >
-                        Get Started
+                        LOGIN
                       </Button>
+                      {/* <Button
+                        block
+                        className="btn-round"
+                        color="info"
+                        onClick={e => {
+                          e.preventDefault();
+                          routeChange('/registration')
+                        }}
+                        size="lg"
+                      >
+                        REGISTER
+                      </Button> */}
                     </CardFooter>
-                    <div className="pull-left">
+                    <div className="pull-center pt-3">
                       <h6>
                         <a
                           className="link footer-link"
                           href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          Create Account
+                          onClick={e => {
+                            e.preventDefault()
+                            routeChange('/registration');
+                          }}>
+                          REGISTER AN ACCOUNT
                         </a>
                       </h6>
                     </div>
-                    <div className="pull-right">
+                    {/* <div className="pull-right">
                       <h6>
                         <a
                           className="link footer-link"
@@ -128,14 +172,14 @@ function LoginPage() {
                           Need Help?
                         </a>
                       </h6>
-                    </div>
+                    </div> */}
                   </Form>
                 </Card>
               </Col>
             </Row>
           </Container>
-        </div>
-        <Footer />
+        {/* </div> */}
+        {/* <Footer /> */}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const HTTPClient = axios.create({
-    baseURL: process.env.REACT_APP_PROTOCOL+"://"+process.env.REACT_APP_DOMAIN,
+    baseURL: 'http://flowrinse-api.test',
     headers:{
         'Authorization': 'Bearer '+ localStorage.getItem('token'),
         'Content-Type': 'application/json',

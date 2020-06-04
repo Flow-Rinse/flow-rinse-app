@@ -36,15 +36,18 @@ import ContactUs from "views/examples/ContactUs.js";
 import Ecommerce from "views/examples/Ecommerce.js";
 import Index from "views/Index.js";
 import LandingPage from "views/examples/LandingPage.js";
-import LoginPage from "views/examples/LoginPage.js";
 import NucleoIcons from "views/NucleoIcons.js";
-import Listings from "views/Listings.js";
 import Pricing from "views/examples/Pricing.js";
 import ProductPage from "views/examples/ProductPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import Sections from "views/Sections.js";
 import SignupPage from "views/examples/SignupPage.js";
 // others
+
+// flowrinse
+import Registration from 'views/Registration.js';
+import LoginPage from "views/LoginPage.js";
+import Listings from "views/Listings.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -59,14 +62,9 @@ ReactDOM.render(
         path="/landing-page"
         render={props => <LandingPage {...props} />}
       />
-      <Route path="/login-page" render={props => <LoginPage {...props} />} />
       <Route
         path="/nucleo-icons"
         render={props => <NucleoIcons {...props} />}
-      />
-      <Route
-        path="/listings"
-        render={props => <Listings {...props} />}
       />
       <Route path="/pricing" render={props => <Pricing {...props} />} />
       <Route
@@ -78,8 +76,11 @@ ReactDOM.render(
         render={props => <ProfilePage {...props} />}
       />
       <Route path="/sections" render={props => <Sections {...props} />} />
-      <Route path="/sign-up" render={props => <SignupPage {...props} />} />
-      <Redirect to="/listings" />
+
+      <Route path="/login" render={props => <LoginPage {...props} />} />
+      <Route path="/registration" render={props => <Registration {...props} />} />
+      <Route path="/listings" render={props => <Listings {...props} />} />
+      <Redirect to="/login" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

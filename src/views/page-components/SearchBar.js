@@ -22,7 +22,7 @@ function SearchBar() {
             <Col>
                 <InputGroup>
                   <Input
-                    placeholder="Right Nucleo Icon"
+                    placeholder="What do you need today?"
                     type="text"
                   ></Input>
                   <InputGroupAddon addonType="append">

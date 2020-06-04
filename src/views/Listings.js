@@ -22,8 +22,25 @@ import SearchBar from "./page-components/SearchBar.js";
 import FillterButton from "./page-components/FillterButton.js";
 import RangeSlider from "./page-components/RangeSlider.js";
 
+import { getGeolocation } from '../service/geolocation';
+
 
 function Listings() {
+
+  const [geolocation, setGeolocation] = React.useState(null);
+
+  React.useEffect(()=> {
+    /** Get User Location */
+    getUserLocation();
+  },[])
+
+  function getUserLocation(){
+    getGeolocation().then((value)=> {
+      console.log('value', value)
+      setGeolocation(value);
+    })
+  }
+
   React.useEffect(() => {
     document.body.classList.add("listings-page");
     // document.documentElement.classList.remove("nav-open");

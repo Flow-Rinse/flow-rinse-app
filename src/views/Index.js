@@ -27,6 +27,7 @@ import Carousel from "./index-sections/Carousel.js";
 import NucleoIcons from "./index-sections/NucleoIcons.js";
 
 function Index() {
+
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -38,6 +39,7 @@ function Index() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
+
   return (
     <>
       <ScrollTransparentNavbar />
