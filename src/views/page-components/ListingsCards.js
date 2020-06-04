@@ -4,6 +4,7 @@ import React from "react";
 import {
   Button,
   Card,
+  CardImg,
   CardBody,
   CardTitle,
   Container,
@@ -21,13 +22,15 @@ function ListingsCards(props) {
     <>
       <Col className="card-listings-container" xs="6" xl="4">
         <Card className="card-blog">
-          <div className="card-image">
+          <div style={{width: '100%', objectFit: 'contain'}}>
             <img
+              style={{height: 150, width: '100%'}}
               alt="..."
-              className="img rounded"
-              src={require("assets/img/project13.jpg")}
+              className="img rounded image-responsive"
+              src={props.value.photo_url}
             ></img>
           </div>
+
           <CardBody>
             <div>
               <CardTitle tag="h5">

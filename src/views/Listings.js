@@ -169,6 +169,7 @@ function Listings(props) {
   const [business, setBusiness] = React.useState(null);
   const [searchKey, setSearchKey] = React.useState(null);
   const [showRange, setShowRange] = React.useState(false);
+  const [rangeValue, setRangeValue] = React.useState(25);
 
   React.useEffect(()=> {
     /** Get User Location */
@@ -197,7 +198,7 @@ function Listings(props) {
   }
 
   async function getBusinessByKey(value){
-    const response = await getData('/api/business?latitude='+geolocation.lat+'&longitude='+geolocation.lon+'&distance=100000&search='+value).then(function(res){
+    const response = await getData('/api/business?latitude='+geolocation.lat+'&longitude='+geolocation.lon+'&distance='+rangeValue+'&search='+value).then(function(res){
       return res;
     }).catch(function(e){
       return e; 
@@ -252,7 +253,7 @@ function Listings(props) {
 
   function renderCards(){
     return(
-      staticBusiness && staticBusiness.map((value, index) => {
+      business && business.map((value, index) => {
         return(
           <Cards key={index} value={value} routeChange={routeChange}/>
         )
@@ -268,7 +269,7 @@ function Listings(props) {
         <FillterButton setShowRange={()=> setShowRange(!showRange)}/>
         {
           showRange &&
-          <RangeSlider />
+          <RangeSlider setRangeValue={(value)=> setRangeValue(value)}/>
         }
         <div className="section-card-listings">
           <Container>
