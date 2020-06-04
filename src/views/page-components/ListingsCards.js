@@ -13,7 +13,12 @@ import {
 
 // core components
 
-function ListingsCards() {
+function ListingsCards(props) {
+  console.log(props)
+  function routeChange(path) {  
+    props.history.push(path);
+  };
+
   return (
     <>
       <Col className="card-listings-container" xs="6" xl="4">
@@ -22,19 +27,19 @@ function ListingsCards() {
             <img
               alt="..."
               className="img rounded"
-              src={require("assets/img/project13.jpg")}
+              src={props.value.photo_url}
             ></img>
           </div>
           <CardBody>
             <CardTitle tag="h5">
               <a href="#pablo" onClick={e => e.preventDefault()}>
-                Styles Salon
+               {props.value.name}
               </a>
             </CardTitle>
             <p className="card-description">
-              Get the latest hairstyles only at Styles Salon!
+            {props.value.description}
             </p>
-            <Button className="btn-round w-100" type="button">
+            <Button className="btn-round w-100" type="button" onClick={()=> routeChange('/booking')}>
               BOOK NOW
             </Button>
           </CardBody>
