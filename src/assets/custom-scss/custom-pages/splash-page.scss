@@ -1,0 +1,19 @@
+.splash-page{
+    .container{
+        height: 100vh;
+        .row{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+    }
+    .icon-container{
+        margin-top: 133px;
+        img{
+            padding: 0 11px;
+        }
+    }
+}

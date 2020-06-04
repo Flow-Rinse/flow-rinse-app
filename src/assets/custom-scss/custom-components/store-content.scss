@@ -55,6 +55,8 @@
         }
         .service-time-container{
             margin-top: em(16);
+            display: flex;
+            overflow-x: auto;
             @media only screen and (max-width: 767px) {
                 margin-top: 16px;
             }
@@ -68,6 +70,10 @@
                 @media only screen and (max-width: 767px) {
                     padding: 9px 27px 9px 27px;
                     margin: 0 7px;
+                }
+                &.disabled{
+                    background-color: #D8D8D8;
+                    color: #757575;
                 }
             }
         }

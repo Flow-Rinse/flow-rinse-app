@@ -46,6 +46,21 @@ function StoreContent() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacinia quam a scelerisque sodales. Aenean vestibulum ac ex ut pharetra. 
                 </p>
                 <div className="service-time-container">
+                  <a href="" className="service-time-pill disabled">
+                    10:00am
+                  </a>
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
                   <a href="" className="service-time-pill">
                     10:00am
                   </a>
@@ -66,6 +81,18 @@ function StoreContent() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacinia quam a scelerisque sodales. Aenean vestibulum ac ex ut pharetra. 
                 </p>
                 <div className="service-time-container">
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
+                  <a href="" className="service-time-pill">
+                    10:00am
+                  </a>
                   <a href="" className="service-time-pill">
                     10:00am
                   </a>

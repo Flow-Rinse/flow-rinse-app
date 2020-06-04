@@ -59,6 +59,8 @@ function ModalConfirm() {
                 <div className="modal-header justify-content-center">
                   <h4 className="title title-up">Confirm Booking?</h4>
                 </div>
+                {/* if you will be using the other modal with kabooked text add text-center class in modal-body */}
+                {/* <div className="modal-body text-center"> */}
                 <div className="modal-body">
                   <p>
                     Service : Haircut
@@ -68,6 +70,9 @@ function ModalConfirm() {
                   </p>
                   <p>
                     Service : Haircut
+                  </p>
+                  <p className="kabooked-text">
+                    Kabooked!
                   </p>
                 </div>
                 <ModalFooter>
