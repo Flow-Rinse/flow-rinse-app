@@ -34,6 +34,14 @@
                 font-size: 16px;
             }
         }
+        .kabooked-text{
+            color: #FF8811;
+            font-weight: bold;
+            font-size: em(20);
+            @media only screen and (max-width: 767px) {
+                font-size: 20px;
+            }
+        }
     }
     .modal-footer{
         @media only screen and (max-width: 767px) {

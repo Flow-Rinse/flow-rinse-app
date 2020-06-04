@@ -64,11 +64,11 @@ function LoginPage(props) {
   return (
     <>
       {/* <DropdownScrollNavbar /> */}
-      <div className="page-header header-filter" filter-color="blue">
+      <div className="page-header header-filter">
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
+            backgroundImage: "url(" + require("assets/img/book-icons/login.png") + ")"
           }}
         ></div>
         {/* <div className="content"> */}
@@ -78,10 +78,10 @@ function LoginPage(props) {
                 <Card className="card-login card-plain">
                   <Form action="" className="form" method="">
                     <CardHeader className="text-center">
-                      <div className="logo-container">
+                      <div className="mb-4">
                         <img
                           alt="..."
-                          src={require("assets/img/now-logo.png")}
+                          src={require("assets/img/book-icons/kabook.svg")}
                         ></img>
                       </div>
                     </CardHeader>
@@ -92,11 +92,9 @@ function LoginPage(props) {
                           (emailAddress ? " input-group-focus" : "")
                         }>
                         <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons users_circle-08"></i>
-                          </InputGroupText>
                         </InputGroupAddon>
                         <Input
+                          className="login-input input-margin"
                           placeholder="Email Address"
                           type="text"
                           onFocus={() => setEmailAddress(true)}
@@ -110,11 +108,9 @@ function LoginPage(props) {
                           (password ? " input-group-focus" : "")
                         }>
                         <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons text_caps-small"></i>
-                          </InputGroupText>
                         </InputGroupAddon>
                         <Input
+                          className="login-input"
                           placeholder="Password"
                           type="password"
                           onFocus={() => setPassword(true)}
@@ -126,7 +122,7 @@ function LoginPage(props) {
                     <CardFooter className="text-center">
                       <Button
                         block
-                        className="btn-round"
+                        className="btn-round login-btn"
                         color="info"
                         onClick={e => {
                           e.preventDefault();
@@ -150,17 +146,15 @@ function LoginPage(props) {
                       </Button> */}
                     </CardFooter>
                     <div className="pull-center pt-3">
-                      <h6>
                         <a
-                          className="link footer-link"
+                          className="link footer-link register-btn"
                           href="#pablo"
                           onClick={e => {
                             e.preventDefault()
                             routeChange('/registration');
                           }}>
-                          REGISTER AN ACCOUNT
+                          REGISTER
                         </a>
-                      </h6>
                     </div>
                     {/* <div className="pull-right">
                       <h6>

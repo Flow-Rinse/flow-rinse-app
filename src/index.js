@@ -50,6 +50,7 @@ import LoginPage from "views/LoginPage.js";
 import Listings from "views/Listings.js";
 import Booking from "views/Booking.js";
 import Store from "views/Store.js";
+import Splash from "views/Splash.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -84,6 +85,7 @@ ReactDOM.render(
       <Route path="/listings" render={props => <Listings {...props} />} />
       <Route path="/booking" render={props => <Booking {...props} />} />
       <Route path="/store" render={props => <Store {...props} />} />
+      <Route path="/splash" render={props => <Splash {...props} />} />
       <Redirect to="/login" />
     </Switch>
   </BrowserRouter>,

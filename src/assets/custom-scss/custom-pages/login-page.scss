@@ -1,0 +1,32 @@
+.login-page{
+    .page-header{
+     &::before{
+         background-color: transparent!important;
+     }   
+     .login-input{
+         background-color: #fff!important;
+         color: #75757C!important;
+         border: 1px solid #979797;
+        border-radius: 5px;
+        height: em(76);
+        &::placeholder{
+            color: #75757C!important;
+        }
+     }
+     .input-margin{
+        margin-bottom: 25px;
+    }
+    }
+    .login-btn{
+        color: #FF8811;
+        background-color: #fff;
+    }
+    .register-btn{
+        width: 100%;
+        display: inline-block;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-radius: 28px;
+        border: 1px #fff solid;
+    }
+}

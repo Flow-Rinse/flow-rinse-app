@@ -72,11 +72,11 @@ function Registration(props) {
   return (
     <>
       {/* <DropdownScrollNavbar /> */}
-      <div className="page-header header-filter" filter-color="blue">
+      <div className="page-header header-filter">
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
+            backgroundImage: "url(" + require("assets/img/book-icons/login.png") + ")"
           }}
         ></div>
         {/* <div className="content"> */}
@@ -86,10 +86,10 @@ function Registration(props) {
                 <Card className="card-login card-plain">
                   <Form action="" className="form" method="">
                     <CardHeader className="text-center">
-                      <div className="logo-container">
+                      <div className="mb-4">
                         <img
                           alt="..."
-                          src={require("assets/img/now-logo.png")}
+                          src={require("assets/img/book-icons/kabook.svg")}
                         ></img>
                       </div>
                     </CardHeader>
@@ -99,12 +99,8 @@ function Registration(props) {
                           "no-border input-lg" +
                           (name ? " input-group-focus" : "")
                         }>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons users_circle-08"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
                         <Input
+                          className="login-input input-margin"
                           placeholder="Name"
                           type="text"
                           onFocus={() => setName(true)}
@@ -117,12 +113,8 @@ function Registration(props) {
                           "no-border input-lg" +
                           (emailAddress ? " input-group-focus" : "")
                         }>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons users_circle-08"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
                         <Input
+                          className="login-input input-margin"
                           placeholder="Email Address"
                           type="text"
                           onFocus={() => setEmailAddress(true)}
@@ -135,12 +127,8 @@ function Registration(props) {
                           "no-border input-lg" +
                           (password ? " input-group-focus" : "")
                         }>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons text_caps-small"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
                         <Input
+                          className="login-input input-margin"
                           placeholder="Password"
                           type="password"
                           onFocus={() => setPassword(true)}
@@ -153,12 +141,8 @@ function Registration(props) {
                           "no-border input-lg" +
                           (passwordConfirm ? " input-group-focus" : "")
                         }>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons text_caps-small"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
                         <Input
+                          className="login-input input-margin"
                           placeholder="Confirm Password"
                           type="password"
                           onFocus={() => setPasswordConfirm(true)}
@@ -171,12 +155,8 @@ function Registration(props) {
                           "no-border input-lg" +
                           (mobile ? " input-group-focus" : "")
                         }>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons text_caps-small"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
                         <Input
+                          className="login-input input-margin"
                           placeholder="Mobile Number"
                           type="number"
                           onFocus={() => setMobile(true)}
@@ -188,7 +168,7 @@ function Registration(props) {
                     <CardFooter className="text-center">
                       <Button
                         block
-                        className="btn-round"
+                        className="btn-round login-btn"
                         color="info"
                         onClick={e => {
                           e.preventDefault();
