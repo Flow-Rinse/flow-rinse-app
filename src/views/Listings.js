@@ -12,6 +12,7 @@ import {
   Row,
   Col
 } from "reactstrap";
+import { getData, postData } from '../utils/api';
 
 // core components
 import WhiteNavbar from "components/Navbars/WhiteNavbar.js";
@@ -28,6 +29,7 @@ import { getGeolocation } from '../service/geolocation';
 function Listings() {
 
   const [geolocation, setGeolocation] = React.useState(null);
+  const [business, setBusiness] = React.useState(null);
 
   React.useEffect(()=> {
     /** Get User Location */
@@ -36,9 +38,23 @@ function Listings() {
 
   function getUserLocation(){
     getGeolocation().then((value)=> {
-      console.log('value', value)
+      console.log('user location -> ', value)
       setGeolocation(value);
+      getAllBusiness(value);
     })
+  }
+
+  async function getAllBusiness(value){
+    const response = await getData('/api/business?latitude='+value.lat+'&longitude='+value.lon+'&distance=100000').then(function(res){
+      return res;
+    }).catch(function(e){
+      return e; 
+    })
+    console.log(response);
+
+    if(response && response.data && response.data.data && response.data.data.businesses){
+      setBusiness(response.data.data.businesses);
+    }
   }
 
   React.useEffect(() => {
@@ -72,6 +88,18 @@ function Listings() {
       script.parentNode.removeChild(script);
     };
   });
+
+  function renderCards(){
+    return(
+      business && business.map((value, index) => {
+        console.log('value', value)
+        return(
+          <Cards key={index} value={value}/>
+        )
+      })
+    )
+  }
+
   return (
     <>
       <WhiteNavbar />
@@ -79,7 +107,16 @@ function Listings() {
         <SearchBar />
         <FillterButton />
         <RangeSlider />
-        <Cards />
+        
+        <div className="section-card-listings">
+          <Container>
+            <Row>
+            {
+              renderCards()
+            }
+            </Row>
+          </Container>
+        </div>
       </div>
     </>
   );
