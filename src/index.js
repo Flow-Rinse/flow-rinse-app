@@ -39,6 +39,7 @@ import LandingPage from "views/examples/LandingPage.js";
 import LoginPage from "views/examples/LoginPage.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import Listings from "views/Listings.js";
+import Booking from "views/Booking.js";
 import Pricing from "views/examples/Pricing.js";
 import ProductPage from "views/examples/ProductPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
@@ -68,6 +69,10 @@ ReactDOM.render(
         path="/listings"
         render={props => <Listings {...props} />}
       />
+      <Route
+        path="/booking"
+        render={props => <Booking {...props} />}
+      />
       <Route path="/pricing" render={props => <Pricing {...props} />} />
       <Route
         path="/product-page"
@@ -79,7 +84,7 @@ ReactDOM.render(
       />
       <Route path="/sections" render={props => <Sections {...props} />} />
       <Route path="/sign-up" render={props => <SignupPage {...props} />} />
-      <Redirect to="/listings" />
+      <Redirect to="/booking" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

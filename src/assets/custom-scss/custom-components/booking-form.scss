@@ -1,0 +1,44 @@
+.section-booking-form{
+    margin-top: em(30);
+    @media only screen and (max-width: 767px) {
+        padding: 0;
+    }
+    .col-12{
+        @media only screen and (max-width: 767px) {
+            padding: 0;
+        }
+    }
+    .form-group{
+        position: relative;
+        margin-bottom: em(50);
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 28px;
+        }
+    }
+    label{
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        padding: 0 5px;
+        background-color: white;
+    }
+    input{
+        height: em(75);
+        background-color: #fff;
+        border: 1px solid #979797;
+        border-radius: 5px;
+    }
+    button{
+        background-color: #FF8811;
+        font-size: 16px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-align: center;
+        margin-top: em(50);
+        @media only screen and (max-width: 767px) {
+            margin-top: 94px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+}

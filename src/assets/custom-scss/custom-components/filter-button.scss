@@ -12,8 +12,12 @@
     button{
         border-color: #fff;
         color: #fff;
+        margin-left: em(15);
+        margin-right: em(15);
         @media only screen and (max-width: 767px) {
             // width: 150px;
+            margin-left: 0;
+            margin-right: 0;
         }
         &:hover{
             border-color: #fff;
