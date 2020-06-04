@@ -8,17 +8,17 @@
         }
         .card{
             border-radius: em(20) ;
-            margin-bottom: em(50);
+            margin-bottom: em(20);
             box-shadow: 0.5px 0.5px rgba(73, 73, 73, 0.5);
             @media only screen and (max-width: 767px) {
-                margin-bottom: 11px;
+                margin-bottom: 5px;
             }
             .rounded{
                 border-radius: em(20)!important;
             }
             .card-body{
                 @media only screen and (max-width: 767px) {
-                    min-height: 320px;
+                    min-height: 300px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;

@@ -14,7 +14,7 @@ import {
 
 // core components
 
-function RangeSlider() {
+function RangeSlider(props) {
 
   const [volumeRange, setVolume] = React.useState(25);
   
@@ -27,14 +27,15 @@ function RangeSlider() {
   }
 
   const handleChange = (event) => {
-    console.log(event.target.value)
+    setVolume(event.target.value)
+    props.setRangeValue(event.target.value)
   }
 
   return (
     <>
       <div className="section-range-slider">
         <Container>
-        <p className="category">{"Within "+volumeRange+" km. of Cavite"}</p>
+        <p className="category">{"Within "+volumeRange+" km. radius"}</p>
         {/* <RangeSliderss
           value={ volumeRange }
           onChange={ (value)=> sliderOnChange(value) }
@@ -42,7 +43,7 @@ function RangeSlider() {
           min={10}
           step={ 10 }
         /> */}
-         <input className="w-100" type="range" min="0" max="100" onChange={handleChange}/>
+         <input className="w-100" type="range" min="0" max="100" step="10" value={volumeRange} onChange={handleChange}/>
         </Container>
       </div>
      
