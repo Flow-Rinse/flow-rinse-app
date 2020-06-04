@@ -1,0 +1,31 @@
+.section-filter-buttons{
+    @media only screen and (max-width: 767px) {
+        padding: 0 10px;
+        margin-top: 5px;
+    }
+    .filter-buttons-container{
+        @media only screen and (max-width: 767px) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    button{
+        border-color: #fff;
+        color: #fff;
+        @media only screen and (max-width: 767px) {
+            // width: 150px;
+        }
+        &:hover{
+            border-color: #fff;
+            color: #fff;
+        }
+        &:active{
+            border-color: #fff!important;
+            color: #fff!important;
+        }
+        &:focus{
+            border-color: #fff;
+            color: #fff;
+        }
+    }
+}
