@@ -194,7 +194,7 @@ function Registration(props) {
                     <div className="pull-center pt-3">
                       <h6>
                         <a
-                          className="link footer-link"
+                          className="link footer-link register-btn"
                           onClick={e => {
                             e.preventDefault();
                             routeChange('/login')}}>
