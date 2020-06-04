@@ -81,7 +81,6 @@ ReactDOM.render(
       <Route path="/login" render={props => <LoginPage {...props} />} />
       <Route path="/registration" render={props => <Registration {...props} />} />
       <Route path="/listings" render={props => <Listings {...props} />} />
-      <Redirect to="/login" />
       <Route path="/booking" render={props => <Booking {...props} />} />
       <Redirect to="/login" />
     </Switch>
