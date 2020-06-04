@@ -1,0 +1,75 @@
+.section-store-content{
+    margin-top: em(54);
+    @media only screen and (max-width: 767px) {
+        padding: 0 15px;
+        margin-top: 54px;
+    }
+    .store-content-card{
+        margin-bottom: em(25);
+        padding-bottom: em(25);
+        border-bottom: 1px solid #979797;
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+        }
+        .store-content-title{
+            font-size: em(20);
+            color: #757575;
+            letter-spacing: -0.75px;
+            @media only screen and (max-width: 767px) {
+                font-size: 20px;
+            }
+        }
+        .store-content-info{
+            font-size: em(16);
+            color: #757575;
+            letter-spacing: -0.6px;
+            line-height: 26px;
+            @media only screen and (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+    }
+    .store-content-services{
+        .store-content-title{
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+        }
+        .services-time{
+            font-size: em(14);
+            color: #FF8811;
+            letter-spacing: -0.53px;
+            line-height: 26px;
+            margin-bottom: em(25);
+            @media only screen and (max-width: 767px) {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+        }
+        .store-content-info{
+            margin-top: em(25);
+            @media only screen and (max-width: 767px) {
+                margin-top: 25px;
+            }
+        }
+        .service-time-container{
+            margin-top: em(16);
+            @media only screen and (max-width: 767px) {
+                margin-top: 16px;
+            }
+            .service-time-pill{
+                color: #fff;
+                padding: em(9) em(27) em(9) em(27);
+                background-color: #FF8811;
+                border-radius: 28px;
+                display: inline-block;
+                margin: 0 em(7);
+                @media only screen and (max-width: 767px) {
+                    padding: 9px 27px 9px 27px;
+                    margin: 0 7px;
+                }
+            }
+        }
+    }
+}

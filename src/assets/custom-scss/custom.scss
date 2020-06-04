@@ -11,7 +11,11 @@ $browser-context: 16; // Default
 @import 'custom-components/filter-button';
 @import 'custom-components/range-slider';
 @import 'custom-components/booking-form';
+@import 'custom-components/store-header';
+@import 'custom-components/store-content';
+
 
 // custom pages
 @import 'custom-pages/listings-page';
 @import 'custom-pages/booking-page';
+@import 'custom-pages/store-page';
