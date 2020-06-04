@@ -163,7 +163,7 @@ const staticBusiness = [{
   "photo_url": "http:\/\/flowrinse-api.test\/img"
 }]
 
-function Listings() {
+function Listings(props) {
 
   const [geolocation, setGeolocation] = React.useState(null);
   const [business, setBusiness] = React.useState(null);
@@ -193,6 +193,10 @@ function Listings() {
       setBusiness(response.data.data.businesses);
     }
   }
+
+  function routeChange(path) {  
+    props.history.push(path);
+  };
 
   React.useEffect(() => {
     document.body.classList.add("listings-page");
@@ -231,7 +235,7 @@ function Listings() {
       staticBusiness && staticBusiness.map((value, index) => {
         console.log('value', value)
         return(
-          <Cards key={index} value={value}/>
+          <Cards key={index} value={value} routeChange={routeChange}/>
         )
       })
     )

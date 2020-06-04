@@ -14,10 +14,6 @@ import {
 // core components
 
 function ListingsCards(props) {
-  console.log(props)
-  function routeChange(path) {  
-    props.history.push(path);
-  };
 
   return (
     <>
@@ -39,7 +35,7 @@ function ListingsCards(props) {
             <p className="card-description">
             {props.value.description}
             </p>
-            <Button className="btn-round w-100" type="button" onClick={()=> routeChange('/booking')}>
+            <Button className="btn-round w-100" type="button" onClick={()=> props.routeChange('/booking')}>
               BOOK NOW
             </Button>
           </CardBody>
