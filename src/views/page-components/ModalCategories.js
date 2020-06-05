@@ -29,14 +29,14 @@ import {
 
 // core components
 
-function ModalConfirm(props) {
+function ModalCategories(props) {
  
   // modals states and functions
   const [modalClassic, setModalClassic] = React.useState(props.modalstate);
 
-  function setBookingDone(){
-    props.setModalState(false)
-    props.routeChange('/listings')
+  function setCategory(category){
+    props.getBusinessByCategory(category)
+    props.setModalState()
   }
 
   return (
@@ -56,42 +56,40 @@ function ModalConfirm(props) {
               </Button>
               </Col>
             </Row> */}
+
               <Modal
                 className="confirm-booking-modal"
-                isOpen={props.modalstate}
+                isOpen={props.modalState}
                 toggle={() => props.setModalState(false)}
               >
                 <div className="modal-header justify-content-center">
-                  <h4 className="title title-up">{props.isBooked ? 'Booking Confirmed!': 'Confirm Booking?'}</h4>
+                  <h4 className="title title-up">Choose a Category</h4>
                 </div>
                 {/* if you will be using the other modal with kabooked text add text-center class in modal-body */}
                 {/* <div className="modal-body text-center"> */}
                 <div className="modal-body">
                   {
-                    props.isBooked ?
-                    <p className="kabooked-text">
-                      <img className="mb-3" src={require("assets/img/book-icons/modal-confirm.svg")}/>
-                      Kabooked!
-                    </p>
-                    :
-                    <div>
-                      <p>
-                        {"Service : " + props.schedule.name}
-                      </p>
-                      <p>
-                        {"Date : " + moment(props.schedule.scheduleDate).format("dddd, MMMM DD")}
-                      </p>
-                      <p>
-                        {"Time : " + props.schedule.name}
-                      </p>
-                    </div>
+                    props.catergies && props.catergies.map((value, index) => {
+                      return(
+                        <div key={index}  style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start'}} onClick={()=> setCategory(value.id) }>
+                          <img
+                            style={{height: 20, alignSelf: 'center', paddingLeft: 30, paddingRight: 30}}
+                            alt="..."
+                            src={value.icon_url}
+                          ></img>
+                          <p className="p-2" style={{fontWeight: 400, textAlign: 'left'}}>
+                            {value.name}
+                          </p>
+                        </div>
+                      )
+                    })
                   }
                 </div>
-                <ModalFooter>
-                  <Button className="btn-round w-100" type="button" onClick={()=> props.isBooked ? setBookingDone() : props.requestBooking()}>
-                    {props.isBooked ? 'Great!': 'Confirm'}
+                {/* <ModalFooter>
+                  <Button className="btn-round w-100" type="button" onClick={()=> props.isBooked ? props.setModalState(false) : props.requestBooking()}>
+                    Filter
                   </Button>
-                </ModalFooter>
+                </ModalFooter> */}
               </Modal>
         </Container>
       </div>
@@ -99,4 +97,4 @@ function ModalConfirm(props) {
   );
 }
 
-export default ModalConfirm;
+export default ModalCategories;

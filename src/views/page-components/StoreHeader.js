@@ -23,6 +23,10 @@ var headerStyle = {
 }
 function StoreHeader(props) {
 
+  React.useEffect(()=> {
+    console.log(props.value)
+  },[])
+
   return (
     <>
       <div className="section-store-header" style={headerStyle}>
@@ -49,10 +53,10 @@ function StoreHeader(props) {
               <img
                   alt="..."
                   className="rounded-circle store-image"
-                  src={require("assets/img/julie.jpg")}
+                  src={props.value.photo_url}
                 ></img>
                 <h3>{props.value.name}</h3>
-                <span>{props.value.city}</span>
+                <span>{props.value.categories[0].name}</span>
                 <span>{props.value.location}</span>
                 <div className="store-rating">
                   <img alt="..." src={Star}></img>

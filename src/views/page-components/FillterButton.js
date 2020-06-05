@@ -19,7 +19,7 @@ function FillterButton(props) {
         <Container>
           <Row>
             <Col xl="5" className="filter-buttons-container">
-              <Button className="btn-round mr-2" color="info" block outline type="button" style={{display: 'flex', justifyContent: 'space-around'}}>
+              <Button className="btn-round mr-2" color="info" block outline type="button" onClick={props.setModalState} style={{display: 'flex', justifyContent: 'space-around'}}>
                 <span style={{alignSelf: 'center'}}>CATEGORIES</span>
                 <img className="ml-3" src={CategoryIcon}/>
               </Button>

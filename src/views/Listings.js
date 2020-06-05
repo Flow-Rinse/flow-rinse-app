@@ -22,6 +22,7 @@ import Cards from "./page-components/ListingsCards.js";
 import SearchBar from "./page-components/SearchBar.js";
 import FillterButton from "./page-components/FillterButton.js";
 import RangeSlider from "./page-components/RangeSlider.js";
+import ModalCategories from './page-components/ModalCategories.js';
 
 import { getGeolocation } from '../service/geolocation';
 
@@ -170,10 +171,13 @@ function Listings(props) {
   const [searchKey, setSearchKey] = React.useState(null);
   const [showRange, setShowRange] = React.useState(false);
   const [rangeValue, setRangeValue] = React.useState(25);
+  const [catergies, setCategories] = React.useState(null);
+  const [modalState, setModalState] = React.useState(false);
 
   React.useEffect(()=> {
     /** Get User Location */
     getUserLocation();
+    getCategories();
   },[])
 
   function getUserLocation() {
@@ -207,6 +211,33 @@ function Listings(props) {
 
     if(response && response.data && response.data.data && response.data.data.businesses){
       setBusiness(response.data.data.businesses);
+    }
+  }
+
+  async function getBusinessByCategory(value){
+    const response = await getData('/api/business?latitude='+geolocation.lat+'&longitude='+geolocation.lon+'&distance='+rangeValue+'&category='+value).then(function(res){
+      return res;
+    }).catch(function(e){
+      return e; 
+    })
+    console.log(response);
+
+    if(response && response.data && response.data.data && response.data.data.businesses){
+      setBusiness(response.data.data.businesses);
+    }
+  }
+
+  async function getCategories(value){
+    const response = await getData('/api/category').then(function(res){
+      return res;
+    }).catch(function(e){
+      return e; 
+    })
+    console.log(response);
+
+    if(response && response.data && response.data.data){
+      setCategories(response.data.data);
+      setModalState(false);
     }
   }
 
@@ -253,7 +284,7 @@ function Listings(props) {
 
   function renderCards(){
     return(
-      staticBusiness && staticBusiness.map((value, index) => {
+      business && business.map((value, index) => {
         return(
           <Cards key={index} value={value} routeChange={routeChange}/>
         )
@@ -266,7 +297,7 @@ function Listings(props) {
       <WhiteNavbar />
       <div className="wrapper">
         <SearchBar updateSearchKey={updateSearchKey}/>
-        <FillterButton setShowRange={()=> setShowRange(!showRange)}/>
+        <FillterButton setShowRange={()=> setShowRange(!showRange)} setModalState={()=> setModalState(!modalState)}/>
         {
           showRange &&
           <RangeSlider setRangeValue={(value)=> setRangeValue(value)}/>
@@ -281,6 +312,7 @@ function Listings(props) {
           </Container>
         </div>
       </div>
+      <ModalCategories modalState={modalState} setModalState={setModalState} catergies={catergies} modalstate={true} getBusinessByCategory={getBusinessByCategory} />
     </>
   );
 }

@@ -108,7 +108,7 @@ function BookingForm(props) {
           </Row>
         </Container>
       </div>
-      <ModalConfirm isBooked={isBooked} schedule={{...props.schedule, scheduleDate: scheduleDate}} modalstate={modalstate} setModalState={()=> setModalState()} requestBooking={()=> requestBooking()} />
+      <ModalConfirm routeChange={props.routeChange} isBooked={isBooked} schedule={{...props.schedule, scheduleDate: scheduleDate}} modalstate={modalstate} setModalState={()=> setModalState()} requestBooking={()=> requestBooking()} />
     </>
   );
 }

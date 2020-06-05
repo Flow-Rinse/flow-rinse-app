@@ -57,6 +57,10 @@ function Booking(props) {
       script.parentNode.removeChild(script);
     };
   });
+
+  function routeChange(path, value) {  
+    props.history.push(path, value);
+  };
   return (
     <>
       <WhiteNavbar />
@@ -66,7 +70,7 @@ function Booking(props) {
             <h3>Booking Details:</h3>
           </Row>
         </Container>
-        <BookingForm schedule={schedule}/>
+        <BookingForm schedule={schedule} routeChange={routeChange}/>
       </div>
     </>
   );
