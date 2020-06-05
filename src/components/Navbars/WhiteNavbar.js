@@ -49,90 +49,22 @@ function WhiteNavbar() {
           </div>
           <Collapse isOpen={collapseOpen} navbar>
             <Nav className="ml-auto" id="ceva" navbar>
+              <div style={{padding: 20}}>
+                <img
+                  alt="..."
+                  src={require("assets/img/book-icons/kabook.svg")}
+                ></img>
+              </div>
               <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="default"
-                  data-toggle="dropdown"
-                  href="#pablo"
-                  id="navbarDropdownMenuLink1"
-                  nav
-                  onClick={e => e.preventDefault()}
-                >
-                  <i className="now-ui-icons design_app"></i>
-                  <p>Home</p>
-                </DropdownToggle>
-                <DropdownMenu aria-labelledby="navbarDropdownMenuLink1" left>
-                  <DropdownItem to="/" tag={Link}>
-                    <i className="now-ui-icons design_image"></i>
-                    Presentation
-                  </DropdownItem>
-                  <DropdownItem to="/index" tag={Link}>
-                    <i className="now-ui-icons business_chart-pie-36"></i>
-                    All components
-                  </DropdownItem>
-                  <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-pro-react/#/documentation/introduction?ref=nuk-pro-react-white-navbar"
-                    target="_blank"
-                    target="_blank"
-                  >
-                    <i className="now-ui-icons design_bullet-list-67"></i>
-                    Documentation
-                  </DropdownItem>
-                </DropdownMenu>
+                <DropdownItem style={{display: 'flex', justifyContent: 'center', fontSize: 18, fontWeight: '300'}} className="text-white p-2" to="/index" tag={Link}>
+                  <i style={{alignSelf: 'center', paddingRight: 10}} className="now-ui-icons business_chart-pie-36"></i>
+                  <span>Dashboard</span>
+                </DropdownItem>
+                <DropdownItem style={{display: 'flex', justifyContent: 'center', fontSize: 18, fontWeight: '300'}} className="text-white p-2" to="/index" tag={Link}>
+                  <i style={{alignSelf: 'center', paddingRight: 10}} className="now-ui-icons business_chart-pie-36"></i>
+                  <span>My Bookings</span>
+                </DropdownItem>
               </UncontrolledDropdown>
-              <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="default"
-                  data-toggle="dropdown"
-                  href="#pablo"
-                  id="navbarDropdownMenuLink"
-                  nav
-                  onClick={e => e.preventDefault()}
-                >
-                  <i
-                    aria-hidden={true}
-                    className="now-ui-icons files_paper"
-                  ></i>
-                  <p>My Bookings</p>
-                </DropdownToggle>
-                <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>
-                  <DropdownItem to="/sections#headers" tag={Link}>
-                    <i className="now-ui-icons shopping_box"></i>
-                    Headers
-                  </DropdownItem>
-                  <DropdownItem to="/sections#features" tag={Link}>
-                    <i className="now-ui-icons ui-2_settings-90"></i>
-                    Features
-                  </DropdownItem>
-                  <DropdownItem to="/sections#blogs" tag={Link}>
-                    <i className="now-ui-icons text_align-left"></i>
-                    Blogs
-                  </DropdownItem>
-                  <DropdownItem to="/sections#teams" tag={Link}>
-                    <i className="now-ui-icons sport_user-run"></i>
-                    Teams
-                  </DropdownItem>
-                  <DropdownItem to="/sections#projects" tag={Link}>
-                    <i className="now-ui-icons education_paper"></i>
-                    Projects
-                  </DropdownItem>
-                  <DropdownItem to="/sections#pricing" tag={Link}>
-                    <i className="now-ui-icons business_money-coins"></i>
-                    Pricing
-                  </DropdownItem>
-                  <DropdownItem to="/sections#testimonials" tag={Link}>
-                    <i className="now-ui-icons ui-2_chat-round"></i>
-                    Testimonials
-                  </DropdownItem>
-                  <DropdownItem to="/sections#contact-us" tag={Link}>
-                    <i className="now-ui-icons tech_mobile"></i>
-                    Contact Us
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              
             </Nav>
           </Collapse>
         </Container>

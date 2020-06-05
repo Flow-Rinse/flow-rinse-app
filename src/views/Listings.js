@@ -215,8 +215,8 @@ function Listings(props) {
     getBusinessByKey(value);
   }
 
-  function routeChange(path) {  
-    props.history.push(path);
+  function routeChange(path, value) {  
+    props.history.push(path, value);
   };
 
   React.useEffect(() => {

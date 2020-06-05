@@ -23,11 +23,6 @@ import DropdownScrollNavbar from "components/Navbars/DropdownScrollNavbar.js";
 import Footer from "components/Footers/Footer.js";
 
 function Splash(props) {
-  const [emailAddress, setEmailAddress] = React.useState(false);
-  const [password, setPassword] = React.useState(false);
-
-  const [emailAddressValue, setEmailAddressValue] = React.useState('jaycee.mandap@dottystylecreative.com');
-  const [passwordValue, setPasswordValue] = React.useState('password');
 
   React.useEffect(() => {
     document.body.classList.add("login-page");
@@ -44,36 +39,19 @@ function Splash(props) {
     console.log(props)
     props.history.push(path);
   };
-
-  async function requestLogin(){
-    let requestObj = {
-      'email': emailAddressValue,
-      'password': passwordValue,
-    }
-    console.log(requestObj)
-    const response = await postData('/api/login', requestObj).then(function(res){
-      return res;
-    }).catch(function(e){
-      return e; 
-    })
-    if(response && response.data && response.data.access_token){
-      localStorage.setItem('token', response.data.access_token)
-      routeChange('/listings');
-    }
-  }
-
   return (
     <>
       {/* <DropdownScrollNavbar /> */}
       <div className="page-header header-filter">
         <div
+         
           className="page-header-image"
           style={{
             backgroundImage: "url(" + require("assets/img/book-icons/login.png") + ")"
           }}
         ></div>
         {/* <div className="content"> */}
-          <Container>
+          <Container  onClick={()=> routeChange('/login')}>
             <Row>
               <Col className="ml-auto mr-auto" md="5">
                 <Card className="card-login card-plain">

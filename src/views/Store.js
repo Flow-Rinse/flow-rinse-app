@@ -12,15 +12,32 @@ import {
   Row,
   Col
 } from "reactstrap";
+import { getData, postData } from '../utils/api';
 
-// core components
-
-// sections for this page
 import StoreHeader from "./page-components/StoreHeader.js";
 import StoreContent from "./page-components/StoreContent.js";
 
+function Store(props) {
 
-function Store() {
+  const [services, setServices] = React.useState(null);
+
+  async function getServices(value){
+    const response = await getData('/api/service?business_id='+props.history.location.state.id).then(function(res){
+      return res;
+    }).catch(function(e){
+      return e; 
+    })
+    console.log(response);
+
+    if(response && response.data && response.data.data && response.data.data.services){
+      setServices(response.data.data.services);
+    }
+  }
+
+  React.useEffect(() => {
+    getServices();
+  },[])
+
   React.useEffect(() => {
     document.body.classList.add("store-page");
     window.scrollTo(0, 0);
@@ -51,11 +68,16 @@ function Store() {
       script.parentNode.removeChild(script);
     };
   });
+
+  function routeChange(path, value) {  
+    props.history.push(path, value);
+  };
+
   return (
     <>
       <div className="wrapper">
-        <StoreHeader />
-        <StoreContent />
+        <StoreHeader value={props.history.location.state} />
+        <StoreContent value={props.history.location.state} services={services} routeChange={routeChange} />
       </div>
     </>
   );

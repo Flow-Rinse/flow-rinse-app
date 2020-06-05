@@ -30,12 +30,13 @@ function ListingsCards(props) {
               src={props.value.photo_url}
             ></img>
           </div>
+          {/* <CardImg className="img rounded img-responsive" top width="100%" src={props.value.photo_url} alt="" style={{display: 'block', height: 'auto', width: '100%'}}/> */}
 
           <CardBody>
             <div>
               <CardTitle tag="h5">
                 <a href="#pablo" onClick={e => e.preventDefault()}>
-                {props.value.name}
+                  {props.value.name}
                 </a>
                 <p className="card-description">
                   {props.value.city}
@@ -50,7 +51,7 @@ function ListingsCards(props) {
             </div>
             <Button className="btn-round w-100" type="button" onClick={(e)=>{ 
               e.preventDefault()
-              props.routeChange('/booking')}}>
+              props.routeChange('/store', props.value)}}>
               BOOK NOW
             </Button>
           </CardBody>

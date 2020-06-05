@@ -18,11 +18,15 @@ import WhiteNavbar from "components/Navbars/WhiteNavbar.js";
 
 // sections for this page
 import BookingForm from "./page-components/BookingForm.js";
-import ModalConfirm from "./page-components/ModalConfirm.js";
 
+function Booking(props) {
 
-function Listings() {
+  const [schedule, setSchedule] = React.useState(props.history.location.state)
 
+  React.useEffect(() => {
+    console.log(props)
+  },[])
+ 
   React.useEffect(() => {
     document.body.classList.add("booking-page");
     window.scrollTo(0, 0);
@@ -62,11 +66,10 @@ function Listings() {
             <h3>Booking Details:</h3>
           </Row>
         </Container>
-        <BookingForm />
-        <ModalConfirm />
+        <BookingForm schedule={schedule}/>
       </div>
     </>
   );
 }
 
-export default Listings;
+export default Booking;

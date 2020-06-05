@@ -21,7 +21,8 @@ import {
 var headerStyle = {
   backgroundImage: `url(${HeaderBG})`
 }
-function StoreHeader() {
+function StoreHeader(props) {
+
   return (
     <>
       <div className="section-store-header" style={headerStyle}>
@@ -50,8 +51,9 @@ function StoreHeader() {
                   className="rounded-circle store-image"
                   src={require("assets/img/julie.jpg")}
                 ></img>
-                <h3>The Zebra</h3>
-                <span>Beauty Salon</span>
+                <h3>{props.value.name}</h3>
+                <span>{props.value.city}</span>
+                <span>{props.value.location}</span>
                 <div className="store-rating">
                   <img alt="..." src={Star}></img>
                   <img alt="..." src={Star}></img>
