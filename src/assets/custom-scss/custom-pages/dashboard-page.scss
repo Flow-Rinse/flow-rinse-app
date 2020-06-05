@@ -1,0 +1,24 @@
+.dashboard-page{
+    background-image: radial-gradient(#ffd6ad, #fb7d00);
+    height: 100vh;
+    nav{
+        .back-icon-booking{
+            display: none;
+        }
+    }
+    .wrapper{
+        margin-top: 250px;
+        @media only screen and (max-width: 767px) {
+            padding: 0 25px;
+            margin-top: 150px;
+        }
+        h3{
+            font-size: em(20);
+            color: #757575;
+            letter-spacing: -0.75px;
+            @media only screen and (max-width: 767px) {
+                font-size: 20px;
+            }
+        }
+    }
+}

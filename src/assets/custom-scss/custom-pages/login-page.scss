@@ -1,4 +1,9 @@
 .login-page{
+    nav{
+        .back-icon-booking{
+            display: none;
+        }
+    }
     .page-header{
      &::before{
          background-color: transparent!important;

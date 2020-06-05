@@ -47,8 +47,15 @@ function WhiteNavbar() {
               <span className="navbar-toggler-bar bottom-bar"></span>
             </button>
           </div>
+          <a href="">
+            <img className="back-icon-booking" alt="..." src={require("assets/img/book-icons/Back.png")}></img>
+          </a>
           <Collapse isOpen={collapseOpen} navbar>
             <Nav className="ml-auto" id="ceva" navbar>
+            <div className="user-name-container">
+                <span>Hello,</span>
+                <h3>Leopoldo</h3>
+              </div>
               <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
@@ -59,8 +66,8 @@ function WhiteNavbar() {
                   nav
                   onClick={e => e.preventDefault()}
                 >
-                  <i className="now-ui-icons design_app"></i>
-                  <p>Home</p>
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_Dashboard.png")}></img>
+                  <p>Dashboard</p>
                 </DropdownToggle>
                 <DropdownMenu aria-labelledby="navbarDropdownMenuLink1" left>
                   <DropdownItem to="/" tag={Link}>
@@ -77,7 +84,7 @@ function WhiteNavbar() {
                     target="_blank"
                   >
                     <i className="now-ui-icons design_bullet-list-67"></i>
-                    Documentation
+                    <p>Documentation</p>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -91,48 +98,95 @@ function WhiteNavbar() {
                   nav
                   onClick={e => e.preventDefault()}
                 >
-                  <i
-                    aria-hidden={true}
-                    className="now-ui-icons files_paper"
-                  ></i>
-                  <p>My Bookings</p>
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_MyAccount.png")}></img>
+                  <p>My Account</p>
                 </DropdownToggle>
-                <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>
-                  <DropdownItem to="/sections#headers" tag={Link}>
-                    <i className="now-ui-icons shopping_box"></i>
-                    Headers
-                  </DropdownItem>
-                  <DropdownItem to="/sections#features" tag={Link}>
-                    <i className="now-ui-icons ui-2_settings-90"></i>
-                    Features
-                  </DropdownItem>
-                  <DropdownItem to="/sections#blogs" tag={Link}>
-                    <i className="now-ui-icons text_align-left"></i>
-                    Blogs
-                  </DropdownItem>
-                  <DropdownItem to="/sections#teams" tag={Link}>
-                    <i className="now-ui-icons sport_user-run"></i>
-                    Teams
-                  </DropdownItem>
-                  <DropdownItem to="/sections#projects" tag={Link}>
-                    <i className="now-ui-icons education_paper"></i>
-                    Projects
-                  </DropdownItem>
-                  <DropdownItem to="/sections#pricing" tag={Link}>
-                    <i className="now-ui-icons business_money-coins"></i>
-                    Pricing
-                  </DropdownItem>
-                  <DropdownItem to="/sections#testimonials" tag={Link}>
-                    <i className="now-ui-icons ui-2_chat-round"></i>
-                    Testimonials
-                  </DropdownItem>
-                  <DropdownItem to="/sections#contact-us" tag={Link}>
-                    <i className="now-ui-icons tech_mobile"></i>
-                    Contact Us
-                  </DropdownItem>
-                </DropdownMenu>
               </UncontrolledDropdown>
-              
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_FindAStore.png")}></img>
+                  <p>Find a Store</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_UpcomingBookings.png")}></img>
+                  <p>Upcoming Bookings</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_ActivityHistory.png")}></img>
+                  <p>Activity History</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_Favourites.png")}></img>
+                  <p>Favourites</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_Settings.png")}></img>
+                  <p>Settings</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav  className="logout-button">
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_LogOut.png")}></img>
+                  <p>Logout</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <img className="nav-logo" alt="..." src={require("assets/img/book-icons/kabook.svg")}></img>
             </Nav>
           </Collapse>
         </Container>

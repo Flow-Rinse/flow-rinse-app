@@ -14,6 +14,8 @@ $browser-context: 16; // Default
 @import 'custom-components/store-header';
 @import 'custom-components/store-content';
 @import 'custom-components/confirm-booking-modal';
+@import 'custom-components/dashboard-icons';
+@import 'custom-components/dashboard-activity';
 
 
 // custom pages
@@ -22,3 +24,4 @@ $browser-context: 16; // Default
 @import 'custom-pages/store-page';
 @import 'custom-pages/login-page';
 @import 'custom-pages/splash-page';
+@import 'custom-pages/dashboard-page';

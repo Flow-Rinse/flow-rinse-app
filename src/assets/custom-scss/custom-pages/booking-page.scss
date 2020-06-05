@@ -10,6 +10,16 @@
                 width: 33px!important;
             }
         }
+        .navbar-translate{
+            display: none;
+        }
+        .back-icon-booking{
+            display: none;
+            @media screen and (max-width: 991px){
+                display: block;
+                padding-left: 12px;
+            }
+        }
     }
     .wrapper{
         margin-top: em(115);

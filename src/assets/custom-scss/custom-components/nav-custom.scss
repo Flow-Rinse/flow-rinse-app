@@ -1,3 +1,7 @@
+.nav-open{
+    overflow: hidden;
+}
+
 nav{
     .navbar-toggler-bar {
         @media screen and (max-width: 991px){
@@ -6,5 +10,31 @@ nav{
             width: 33px!important;
         }
     }
-
+    .logout-button{
+        @media screen and (max-width: 991px){
+           margin-top: 120px;
+        }
+    }
+    .dropdown-toggle:after{
+        display: none!important;
+    }
+    .user-name-container{
+        display: none;
+        @media screen and (max-width: 991px){
+            display: block;
+        }
+        padding-left: 27px;
+        color: #fff;
+        h3{
+            margin-bottom: 10px;
+        }
+    }
+    .nav-logo{
+        display: none;
+        @media screen and (max-width: 991px){
+            display: block;
+            padding: 0 25px;
+            margin-top: 10px;
+        }
+    }
 }

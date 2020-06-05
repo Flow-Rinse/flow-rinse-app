@@ -1,6 +1,11 @@
 .listings-page{
     background-image: radial-gradient(#ffd6ad, #fb7d00);
     height: 100vh;
+    nav{
+        .back-icon-booking{
+            display: none;
+        }
+    }
     .wrapper{
         margin-top: em(115);
     }
