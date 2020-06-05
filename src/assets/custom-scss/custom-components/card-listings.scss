@@ -22,7 +22,9 @@
                 flex-direction: column;
                 justify-content: space-between;
                 @media only screen and (max-width: 767px) {
-                    min-height: 320px;
+                    // min-height: 320px;
+                    padding-top: 0;
+                    padding-bottom: 10px;
                 }
                 .card-description{
                     @media only screen and (max-width: 767px) {
@@ -30,6 +32,7 @@
                         color: #757575;
                         letter-spacing: 0;
                         line-height: 17px;
+                        margin-bottom: 5px;
                     }
                 }
                 .card-title{
