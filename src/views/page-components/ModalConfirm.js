@@ -57,7 +57,7 @@ function ModalConfirm(props) {
                 toggle={() => props.setModalState(false)}
               >
                 <div className="modal-header justify-content-center">
-                  <h4 className="title title-up">Confirm Booking?</h4>
+                  <h4 className="title title-up">{props.isBooked ? 'Booking Confirmed!': 'Confirm Booking?'}</h4>
                 </div>
                 {/* if you will be using the other modal with kabooked text add text-center class in modal-body */}
                 {/* <div className="modal-body text-center"> */}
@@ -65,6 +65,7 @@ function ModalConfirm(props) {
                   {
                     props.isBooked ?
                     <p className="kabooked-text">
+                      <img className="mb-3" src={require("assets/img/book-icons/modal-confirm.svg")}/>
                       Kabooked!
                     </p>
                     :
