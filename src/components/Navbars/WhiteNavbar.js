@@ -17,9 +17,14 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-function WhiteNavbar() {
+function WhiteNavbar(props) {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [userData, setUserData] = React.useState(JSON.parse(localStorage.getItem('user')))
+
+  // function routeChange(path) {  
+  //   props.history.push(path);
+  //   window.location.reload();
+  // };
 
   return (
     <>
@@ -66,7 +71,9 @@ function WhiteNavbar() {
                   href="#pablo"
                   id="navbarDropdownMenuLink1"
                   nav
-                  onClick={e => e.preventDefault()}
+                  onClick={e => {
+                    e.preventDefault() 
+                    props.routeChange('/dashboard')}}
                 >
                   <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_Dashboard.png")}></img>
                   <p>Dashboard</p>

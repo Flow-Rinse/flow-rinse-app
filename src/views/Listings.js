@@ -248,6 +248,7 @@ function Listings(props) {
 
   function routeChange(path, value) {  
     props.history.push(path, value);
+    window.location.reload();
   };
 
   React.useEffect(() => {
@@ -294,7 +295,7 @@ function Listings(props) {
 
   return (
     <>
-      <WhiteNavbar />
+      <WhiteNavbar routeChange={routeChange} />
       <div className="wrapper">
         <SearchBar updateSearchKey={updateSearchKey}/>
         <FillterButton setShowRange={()=> setShowRange(!showRange)} setModalState={()=> setModalState(!modalState)}/>

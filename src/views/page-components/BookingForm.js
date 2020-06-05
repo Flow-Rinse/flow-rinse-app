@@ -61,7 +61,7 @@ function BookingForm(props) {
                   <label>Service</label>
                   <Input
                     value={props.schedule.name}
-                    readOnly
+                    
                     placeholder="Regular"
                     type="text"
                   ></Input>
@@ -84,7 +84,7 @@ function BookingForm(props) {
                   <Input
                     placeholder="Regular"
                     type="text"
-                    readOnly
+                    
                     value={userData.name}
                   ></Input>
                 </FormGroup>
@@ -94,7 +94,7 @@ function BookingForm(props) {
                   <label>Phone</label>
                   <Input
                     placeholder="Phone Number"
-                    readOnly
+                    
                     type="number"
                     value={userData.mobile_number}
                   ></Input>

@@ -37,6 +37,7 @@ function ModalConfirm(props) {
   function setBookingDone(){
     props.setModalState(false)
     props.routeChange('/listings')
+    window.location.reload();
   }
 
   return (
@@ -88,9 +89,16 @@ function ModalConfirm(props) {
                   }
                 </div>
                 <ModalFooter>
-                  <Button className="btn-round w-100" type="button" onClick={()=> props.isBooked ? setBookingDone() : props.requestBooking()}>
+                  <Button className="btn-round w-100 mr-2" type="button" onClick={()=> props.isBooked ? setBookingDone() : props.requestBooking()}>
                     {props.isBooked ? 'Great!': 'Confirm'}
                   </Button>
+                  {
+                    !props.isBooked &&
+                    <Button className="btn-round w-100 ml-2" style={{backgroundColor: 'gray'}} type="button" onClick={()=> props.setModalState(false)}>
+                      {'Cancel'}
+                    </Button>
+
+                  }
                 </ModalFooter>
               </Modal>
         </Container>

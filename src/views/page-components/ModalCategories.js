@@ -85,11 +85,11 @@ function ModalCategories(props) {
                     })
                   }
                 </div>
-                {/* <ModalFooter>
-                  <Button className="btn-round w-100" type="button" onClick={()=> props.isBooked ? props.setModalState(false) : props.requestBooking()}>
-                    Filter
+                <ModalFooter>
+                  <Button className="btn-round w-100" type="button" onClick={()=> props.setModalState(false)}>
+                    Close
                   </Button>
-                </ModalFooter> */}
+                </ModalFooter>
               </Modal>
         </Container>
       </div>

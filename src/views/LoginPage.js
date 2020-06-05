@@ -42,6 +42,7 @@ function LoginPage(props) {
   function routeChange(path) {  
     console.log(props)
     props.history.push(path);
+    window.location.reload();
   };
 
   async function requestLogin(){

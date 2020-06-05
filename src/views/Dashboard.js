@@ -25,6 +25,7 @@ function Dashboard(props) {
 
   function routeChange(path) {  
     props.history.push(path);
+    window.location.reload();
   };
 
   React.useEffect(() => {
@@ -59,7 +60,7 @@ function Dashboard(props) {
   });
   return (
     <>
-      <WhiteNavbar />
+      <WhiteNavbar routeChange={routeChange} />
       <div className="wrapper">
         <DashboardIcons routeChange={routeChange}/>
         <DashboardActivity />

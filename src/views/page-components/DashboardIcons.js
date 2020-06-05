@@ -26,19 +26,19 @@ function DashboardIcons(props) {
             <Col xs="6" xl="3">
               <div className="icon-wrapper">
                 <img src={require("assets/img/book-icons/History.png")} />
-                <span>Find A Store</span>
+                <span>Activity History</span>
               </div>
             </Col>
             <Col xs="6" xl="3">
               <div className="icon-wrapper mobile-icon">
                 <img src={require("assets/img/book-icons/Favourites.png")} />
-                <span>Find A Store</span>
+                <span>Favourites</span>
               </div>
             </Col>
             <Col xs="6" xl="3">
               <div className="icon-wrapper mobile-icon">
                 <img src={require("assets/img/book-icons/Settings.png")} />
-                <span>Find A Store</span>
+                <span>Settings</span>
               </div>
             </Col>
           </Row>
