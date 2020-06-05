@@ -52,6 +52,7 @@ import Listings from "views/Listings.js";
 import Booking from "views/Booking.js";
 import Store from "views/Store.js";
 import Splash from "views/Splash.js";
+import Dashboard from "views/Dashboard.js";
 
 export default function App (props) {
 
@@ -64,6 +65,7 @@ export default function App (props) {
         <Route path="/booking" render={props => <Booking {...props} />} />
         <Route path="/store" render={props => <Store {...props} />} />
         <Route path="/splash" render={props => <Splash {...props} />} />
+        <Route path="/dashboard" render={props => <Dashboard {...props} />} />
         <Redirect from="*" to="/splash" />
       </Switch>
     </BrowserRouter>
@@ -71,4 +73,3 @@ export default function App (props) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
-

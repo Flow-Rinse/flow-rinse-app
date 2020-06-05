@@ -19,6 +19,8 @@ import {
 
 function WhiteNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
+  const [userData, setUserData] = React.useState(JSON.parse(localStorage.getItem('user')))
+
   return (
     <>
       {collapseOpen ? (
@@ -47,24 +49,128 @@ function WhiteNavbar() {
               <span className="navbar-toggler-bar bottom-bar"></span>
             </button>
           </div>
+          <a href="">
+            <img className="back-icon-bookingF" alt="..." src={require("assets/img/book-icons/Back.png")}></img>
+          </a>
           <Collapse isOpen={collapseOpen} navbar>
             <Nav className="ml-auto" id="ceva" navbar>
-              <div style={{padding: 20}}>
-                <img
-                  alt="..."
-                  src={require("assets/img/book-icons/kabook.svg")}
-                ></img>
+            <div className="user-name-container">
+                <span>Hello,</span>
+                <h3>{userData.name}</h3>
               </div>
               <UncontrolledDropdown nav>
-                <DropdownItem style={{display: 'flex', justifyContent: 'center', fontSize: 18, fontWeight: '300'}} className="text-white p-2" to="/index" tag={Link}>
-                  <i style={{alignSelf: 'center', paddingRight: 10}} className="now-ui-icons business_chart-pie-36"></i>
-                  <span>Dashboard</span>
-                </DropdownItem>
-                <DropdownItem style={{display: 'flex', justifyContent: 'center', fontSize: 18, fontWeight: '300'}} className="text-white p-2" to="/index" tag={Link}>
-                  <i style={{alignSelf: 'center', paddingRight: 10}} className="now-ui-icons business_chart-pie-36"></i>
-                  <span>My Bookings</span>
-                </DropdownItem>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink1"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_Dashboard.png")}></img>
+                  <p>Dashboard</p>
+                </DropdownToggle>
               </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_MyAccount.png")}></img>
+                  <p>My Account</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_FindAStore.png")}></img>
+                  <p>Find a Store</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_UpcomingBookings.png")}></img>
+                  <p>Upcoming Bookings</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_ActivityHistory.png")}></img>
+                  <p>Activity History</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_Favourites.png")}></img>
+                  <p>Favourites</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_Settings.png")}></img>
+                  <p>Settings</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav  className="logout-button">
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <img className="d-line mr-2" alt="..." src={require("assets/img/book-icons/Menu_LogOut.png")}></img>
+                  <p>Logout</p>
+                </DropdownToggle>
+              </UncontrolledDropdown>
+              <img className="nav-logo" alt="..." src={require("assets/img/book-icons/kabook.svg")}></img>
             </Nav>
           </Collapse>
         </Container>
